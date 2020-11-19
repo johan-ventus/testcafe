@@ -1,0 +1,27 @@
+{
+  "name": "testcafe",
+  "version": "1.0.0",
+  "description": "TestCafe",
+  "main": "index.js",
+  "dependencies": {
+    "eslint": "^7.13.0",
+    "testcafe": "^1.9.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johan-ventus/testcafe.git"
+  },
+  "keywords": [
+    "testcafe"
+  ],
+  "author": "Johan Ventus",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/johan-ventus/testcafe/issues"
+  },
+  "homepage": "https://github.com/johan-ventus/testcafe#readme"
+}
