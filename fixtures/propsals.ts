@@ -1,6 +1,6 @@
 
 import LoginPage from "../page-models/loginPage"
-import { floorP } from "../tests/FloorPlanning"
+import { order }  from '../tests/ProductList'
 
 const login = new LoginPage()
 
@@ -9,6 +9,6 @@ fixture ('Floor Planning')
         await login.loginWithCredentials()
     })
 
-    test('Floor Planning', async () => {
-        await floorP()
+    test('Order List', async () => {
+        await order()
     })

@@ -1,7 +1,6 @@
 import { Selector, t } from "testcafe"
 import { buttonByValue } from "../data/dataSelectors"
-
-const loginData = require('../data/rc_login.json')
+import loginData from '../data/rc_login.json'
 
 export default class LoginPage {
     private inputUserName: Selector
