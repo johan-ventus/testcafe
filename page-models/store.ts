@@ -1,19 +1,24 @@
+import { expect } from 'chai'
 import { Selector, t } from 'testcafe'
-import { openDashboard } from '../data/dataSelectors'
-
+import { openDashboard, selectLocation } from '../data/dataSelectors'
 
 export default class Store {
     private mainMenu: Selector
     private sideNavMenu: Selector
     private accountSettings: Selector
-    private FloorPlanning: Selector
+    private floorPlanning: Selector
+    private productList: Selector
+    private location: Selector
+    private locationDropdown: Selector
 
     constructor() {
         this.mainMenu = Selector('mat-icon').withText('menu')
         this.sideNavMenu = Selector('mat-icon').withText('menu').nth(-1)
         this.accountSettings = openDashboard('Account Settings')
-        this.FloorPlanning =openDashboard('Floor Planning')
-
+        this.floorPlanning = openDashboard('Floor Planning')
+        this.productList = openDashboard('Lists')
+        this.location = selectLocation()
+        this.locationDropdown = Selector('mat-icon').withText('arrow_drop_down')
     }
 
     public async openAccountSettings (): Promise <void> {
@@ -22,9 +27,20 @@ export default class Store {
     
     public async openFloorPlanning(): Promise <void> {
         await t.click(this.mainMenu)
-            .click(this.FloorPlanning)
+            .click(this.floorPlanning)
             .expect(this.sideNavMenu.visible).ok()
             .click(this.sideNavMenu)
+    }
+
+    public async openProductList(): Promise <void> {
+        await t.click(this.mainMenu)
+            .click(this.productList)
+    }
+
+    public async selectLocation(): Promise <void> {
+        await t.click(this.locationDropdown)
+            .expect(this.location.visible).ok()
+            .click(this.location)
     }
 
 
