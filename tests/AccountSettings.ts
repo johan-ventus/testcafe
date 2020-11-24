@@ -4,7 +4,7 @@ import AccountSettings from '../page-models/accountSettings'
 const store = new Store()
 const account = new AccountSettings()
 
-export const storeUsersAreVisible = async () => {
+export const storeUsersAreVisible = async (): Promise<void> => {
     await store.openAccountSettings()
     await account.openUsersPage()
     await account.fetchUsers()

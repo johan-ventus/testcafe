@@ -1,4 +1,3 @@
-import { expect } from 'chai'
 import { Selector, t } from 'testcafe'
 import { openDashboard, selectLocation } from '../data/dataSelectors'
 

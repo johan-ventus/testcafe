@@ -5,7 +5,7 @@ import { order }  from '../tests/ProductList'
 const login = new LoginPage()
 
 fixture ('Floor Planning')
-    .beforeEach( async t => {
+    .beforeEach( async () => {
         await login.loginWithCredentials()
     })
 
