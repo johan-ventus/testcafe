@@ -1,6 +1,9 @@
 import { Selector, t } from "testcafe"
 import { buttonByValue } from "../data/dataSelectors"
-import loginData from '../data/rc_login.json'
+
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const loginData = require('../data/rc_login.json') 
+
 
 export default class LoginPage {
     private inputUserName: Selector
