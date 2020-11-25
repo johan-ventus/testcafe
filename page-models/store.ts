@@ -9,6 +9,7 @@ export default class Store {
     private productList: Selector
     private location: Selector
     private locationDropdown: Selector
+    private plano: Selector
 
     constructor() {
         this.mainMenu = Selector('mat-icon').withText('menu')
@@ -18,6 +19,7 @@ export default class Store {
         this.productList = openDashboard('Lists')
         this.location = selectLocation()
         this.locationDropdown = Selector('mat-icon').withText('arrow_drop_down')
+        this.plano = openDashboard('Store Planograms')
     }
 
     public async openAccountSettings (): Promise <void> {
@@ -34,6 +36,11 @@ export default class Store {
     public async openProductList(): Promise <void> {
         await t.click(this.mainMenu)
             .click(this.productList)
+    }
+
+    public async openPlano(): Promise <void> {
+        await t.click(this.mainMenu)
+            .click(this.plano)
     }
 
     public async selectLocation(): Promise <void> {
