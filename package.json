@@ -1,5 +1,5 @@
 {
-  "name": "testcafe",
+  "name": "test_with_testcafe",
   "version": "1.0.4",
   "description": "TestCafe",
   "main": "index.js",
