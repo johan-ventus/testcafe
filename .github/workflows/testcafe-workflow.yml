@@ -1,0 +1,22 @@
+name: End-to-End Tests
+on: [push]
+
+jobs:
+  test:
+    name: Run TestCafe Tests
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+        working-directory: /home/runner/work/testcafe/testcafe/
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v1
+
+      - name: Show me where I am
+        run: ls
+
+      - name: Run tests
+        uses: DevExpress/testcafe-action@latest
+        with:
+          args: "chrome fixtures/propsals.ts"
